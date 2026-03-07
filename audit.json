@@ -1,0 +1,61 @@
+{
+    "keepSettings": {
+        "type": 2,
+        "amount": 10
+    },
+    "auditFilename": "audit.json",
+    "hashType": "md5",
+    "extension": "",
+    "files": [
+        {
+            "date": 1772068110973,
+            "name": "/Users/zhangchuyuan/Desktop/slice/实战/mianshiya-node/src/logs/access-2026-02-26.log",
+            "hash": "88bdf1c0031b4f6ee068dc3f251e4795"
+        },
+        {
+            "date": 1772155795479,
+            "name": "/Users/zhangchuyuan/Desktop/slice/实战/mianshiya-node/src/logs/access-2026-02-27.log",
+            "hash": "02422f1424f4c8e019207f5ba036afa1"
+        },
+        {
+            "date": 1772242685525,
+            "name": "/Users/zhangchuyuan/Desktop/slice/实战/mianshiya-node/src/logs/access-2026-02-28.log",
+            "hash": "c3b32cb07ebfef80bb495157d7adc91c"
+        },
+        {
+            "date": 1772279720538,
+            "name": "A:\\project\\mianshiya-node\\src\\logs\\access-2026-02-28.log",
+            "hash": "4ec4c4d7f5e928d74024fe851ca1f4bc"
+        },
+        {
+            "date": 1772317647235,
+            "name": "A:\\project\\mianshiya-node\\src\\logs\\access-2026-03-01.log",
+            "hash": "5f7465c7545b5ee72d27fb49dccc01d2"
+        },
+        {
+            "date": 1772415353936,
+            "name": "/Users/zhangchuyuan/Desktop/slice/实战/mianshiya-node/src/logs/access-2026-03-02.log",
+            "hash": "443efa90a81f44466157de49ce110274"
+        },
+        {
+            "date": 1772504115353,
+            "name": "/Users/zhangchuyuan/Desktop/slice/实战/mianshiya-node/src/logs/access-2026-03-03.log",
+            "hash": "5dbaa542fa904c852b090dfda0a17eb2"
+        },
+        {
+            "date": 1772589670062,
+            "name": "/Users/zhangchuyuan/Desktop/slice/实战/mianshiya-node/src/logs/access-2026-03-04.log",
+            "hash": "e5b7adff75ff4fa7d1bb7b97f34cfa0e"
+        },
+        {
+            "date": 1772674980412,
+            "name": "/Users/zhangchuyuan/Desktop/slice/实战/mianshiya-node/src/logs/access-2026-03-05.log",
+            "hash": "369ef59f3e3d306eb8431e25ccafd75e"
+        },
+        {
+            "date": 1772760019285,
+            "name": "/Users/zhangchuyuan/Desktop/slice/实战/mianshiya-node/src/logs/access-2026-03-06.log",
+            "hash": "24ede7dcace12701f04e76050c811a12"
+        }
+    ]
+}

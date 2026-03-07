@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".", // 基础路径为项目根目录
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "module": "CommonJS", // 匹配 Node 模块规范（ESM 项目改为 "ESNext"）
+    "target": "ES6",
+    "moduleResolution": "Node"
+  },
+  "include": ["src/**/*"], // 包含的代码目录
+  "exclude": ["node_modules", "dist"] // 排除的目录
+}
