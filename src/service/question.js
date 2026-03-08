@@ -29,9 +29,9 @@ const questionCreate = async (app, req) => {
 
   // 获取合法的标签
   const tagList = await app.models.Tag.findAll();
-  params.tags = params.tags.filter((tag) =>
-    tagList.some((i) => i.name === tag)
-  );
+  params.tags = params.tags
+    .filter((tag) => tagList.some((i) => i.name === tag))
+    .filter(Boolean);
 
   // 每个用户每天只能上传50到题目
   const currentUser = getLoginUser(req);
@@ -184,7 +184,7 @@ const questionAdult = async (app, req) => {
         adult_status,
       },
       { where: { id } },
-      { transaction: t }
+      { transaction: t },
     );
     await app.models.questionAdultLog.create(
       {
@@ -193,7 +193,7 @@ const questionAdult = async (app, req) => {
         remark: remark || "",
         user_id: userInfo.id,
       },
-      { transaction: t }
+      { transaction: t },
     );
   });
 };
@@ -239,7 +239,7 @@ const questionUpdate = async (app, req) => {
   // 获取合法的标签
   const tagList = await app.models.Tag.findAll();
   params.tags = params.tags.filter((tag) =>
-    tagList.some((i) => i.name === tag)
+    tagList.some((i) => i.name === tag),
   );
 
   await app.models.Question.update(params, {
@@ -279,7 +279,7 @@ const questionQueryByPage = async (app, req) => {
       [Op.and]: app.sequelize.fn(
         "JSON_CONTAINS",
         app.sequelize.col("tags"), // 字段名（避免引号问题）
-        app.sequelize.fn("JSON_ARRAY", tag) // 生成 JSON_ARRAY('标签值')
+        app.sequelize.fn("JSON_ARRAY", tag), // 生成 JSON_ARRAY('标签值')
       ),
     }));
   }

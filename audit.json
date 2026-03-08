@@ -8,11 +8,6 @@
     "extension": "",
     "files": [
         {
-            "date": 1772068110973,
-            "name": "/Users/zhangchuyuan/Desktop/slice/实战/mianshiya-node/src/logs/access-2026-02-26.log",
-            "hash": "88bdf1c0031b4f6ee068dc3f251e4795"
-        },
-        {
             "date": 1772155795479,
             "name": "/Users/zhangchuyuan/Desktop/slice/实战/mianshiya-node/src/logs/access-2026-02-27.log",
             "hash": "02422f1424f4c8e019207f5ba036afa1"
@@ -56,6 +51,11 @@
             "date": 1772760019285,
             "name": "/Users/zhangchuyuan/Desktop/slice/实战/mianshiya-node/src/logs/access-2026-03-06.log",
             "hash": "24ede7dcace12701f04e76050c811a12"
+        },
+        {
+            "date": 1772967690310,
+            "name": "E:\\project\\mianshiya-node\\src\\logs\\access-2026-03-08.log",
+            "hash": "edba38c1035263b8e7a6d395ba2454d1"
         }
     ]
 }

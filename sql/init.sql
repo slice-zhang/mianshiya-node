@@ -99,7 +99,7 @@ create table if not exists question_adult_log(
 
 -- 初始化数据
 -- 题库表初始数据
-INSERT INTO question_bank (title, description, picture, userId)
+INSERT INTO question_bank (title, description, picture, user_id)
 VALUES ('JavaScript 基础', '包含 JavaScript 的基础知识题目',
         'https://pic.code-nav.cn/mianshiya/question_bank_picture/1777886594896760834/JldkWf9w_JavaScript.png', 1),
        ('CSS 样式', '包含 CSS 相关的样式问题',
@@ -127,7 +127,7 @@ VALUES ('JavaScript 基础', '包含 JavaScript 的基础知识题目',
 
 
 
-INSERT INTO question (title, content, tags, answer, userId)
+INSERT INTO question (title, content, tags, answer, user_id)
 VALUES ('JavaScript 变量提升', '请解释 JavaScript 中的变量提升现象。', '["JavaScript", "基础"]',
         '变量提升是指在 JavaScript 中，变量声明会被提升到作用域的顶部。', 1),
        ('CSS Flexbox 布局', '如何使用 CSS 实现一个水平居中的盒子？', '["CSS", "布局"]',
