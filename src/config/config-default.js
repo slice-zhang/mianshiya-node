@@ -17,7 +17,7 @@ module.exports = {
   session: {
     prefix: "mianshiya:user:", // session存储的前缀
     ttl: 3600, // 过期时间
-    secret: "zhangchuyuan", // sessionID加密的密钥
+    secret: "", // sessionID加密的密钥
     rolling: true, // 每次请求都更新session的过期时间
     resave: false, // 不强制重新保存未修改的会话
     saveUninitialized: false, // 不保存未初始化的会话（减少无效数据）
