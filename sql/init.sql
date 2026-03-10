@@ -57,8 +57,8 @@ create table if not exists question_bank_question
     question_bank_id bigint                             not null comment '题库 id',
     question_id     bigint                             not null comment '题目 id',
     user_id         bigint                             not null comment '创建用户 id',
-    create_at     datetime default CURRENT_TIMESTAMP not null comment '创建时间',
-    update_at     datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
+    created_at     datetime default CURRENT_TIMESTAMP not null comment '创建时间',
+    updated_at     datetime default CURRENT_TIMESTAMP not null on update CURRENT_TIMESTAMP comment '更新时间',
     UNIQUE (question_bank_id, question_id)
     ) comment '题库题目' collate = utf8mb4_unicode_ci;
 

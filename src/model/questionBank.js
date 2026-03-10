@@ -88,6 +88,13 @@ const QuestionBank = {
       foreignKey: "user_id",
       as: "user",
     });
+    models.QuestionBank.belongsToMany(models.Question, {
+      through: "question_bank_question", // 中间表名
+      as: "questionList", // 别名（查询时要用到）
+      foreignKey: "question_bank_id", // 中间表中关联题库表的字段
+      otherKey: "question_id", // 中间表中关联题目表的字段
+      timestamps: true, // 中间表有 created_at/updated_at，需要开启
+    });
   },
 };
 

@@ -4,6 +4,7 @@ const questionBankQueryByPageDto = require("@/dto/questionBankQueryByPageDto");
 const questionBankReviewDto = require("@/dto/questionBankReviewDto");
 const { getLoginUser } = require("@/service/user");
 const { Op } = require("sequelize");
+const { includes } = require("lodash-es");
 
 /**
  * 新增题库
@@ -168,7 +169,7 @@ const questionBankAdult = async (app, req) => {
         adult_status,
       },
       { where: { id } },
-      { transaction: t }
+      { transaction: t },
     );
     await app.models.questionBankAdultLog.create(
       {
@@ -177,7 +178,7 @@ const questionBankAdult = async (app, req) => {
         remark: remark || "",
         user_id: userInfo.id,
       },
-      { transaction: t }
+      { transaction: t },
     );
   });
 };
@@ -211,11 +212,23 @@ const questionBankAdultLogs = async (app, req) => {
  * @returns
  */
 const questionBankDetailById = async (app, req) => {
-  const { id } = req.query;
+  const { id, needQuestionList } = req.query;
   const questionBank = await app.models.QuestionBank.findOne({
     where: {
       id,
+      adult_status: 2,
     },
+    include: needQuestionList
+      ? [
+          {
+            where: {
+              adult_status: 2,
+            },
+            model: app.models.Question,
+            as: "questionList",
+          },
+        ]
+      : [],
     attributes: {
       exclude: ["deleted_at"],
     },

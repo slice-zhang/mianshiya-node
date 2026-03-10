@@ -107,6 +107,13 @@ const Question = {
       foreignKey: "user_id",
       as: "user",
     });
+    models.Question.belongsToMany(models.QuestionBank, {
+      through: "question_bank_question",
+      as: "questionBanks",
+      foreignKey: "question_id", // 中间表中关联题目表的字段
+      otherKey: "question_bank_id", // 中间表中关联题库表的字段
+      timestamps: true,
+    });
   },
 };
 
