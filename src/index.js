@@ -5,7 +5,6 @@ const initRoutes = require("@/router");
 const model = require("@/model");
 const initMysql = require("@/plugin/mysql");
 const { initLogger, writeLog } = require("@/plugin/logger");
-const checkAuth = require("@/middleware/checkAuth");
 const sessionMiddleware = require("@/middleware/session");
 const ossClient = require("@/plugin/oss");
 let serverInstance = new Server();
@@ -15,7 +14,12 @@ let mysqlInstance = null;
 async function startApplication() {
   try {
     serverInstance = new Server();
-    // 1、初始化数据库
+
+    // 注册session中间件
+    serverInstance.registerGlobalMiddleware(sessionMiddleware);
+    console.log(`🚀 session服务注册成功`);
+
+    // 初始化数据库
     mysqlInstance = await initMysql();
     // 初始化模型实例
     const models = {};
@@ -38,14 +42,6 @@ async function startApplication() {
     // 挂载ossClient
     serverInstance.registerApp("ossClient", ossClient);
     console.log(`🚀 OSS服务注册成功`);
-
-    // 2、注册session中间件
-    serverInstance.registerGlobalMiddleware(sessionMiddleware);
-    console.log(`🚀 session服务注册成功`);
-
-    // 3、注册鉴权中间件
-    serverInstance.registerGlobalMiddleware(checkAuth);
-    console.log(`🚀 鉴权中间件注册成功`);
 
     // 4、挂载日志实例到app
     const accessLogStream = initLogger();
