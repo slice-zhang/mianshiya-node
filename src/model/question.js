@@ -52,24 +52,6 @@ const Question = {
       defaultValue: 0,
       comment: "排序",
     },
-    view_num: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: 0,
-      comment: "浏览量",
-    },
-    thumb_num: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: 0,
-      comment: "点赞量",
-    },
-    favour_num: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: 0,
-      comment: "收藏量",
-    },
     need_vip: {
       type: DataTypes.TINYINT,
       allowNull: true,

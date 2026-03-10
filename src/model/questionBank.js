@@ -40,12 +40,6 @@ const QuestionBank = {
       defaultValue: 0,
       comment: "排序",
     },
-    view_num: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
-      defaultValue: 0,
-      comment: "浏览量",
-    },
     created_at: {
       type: DataTypes.DATE,
       allowNull: false,
