@@ -212,13 +212,13 @@ const questionBankAdultLogs = async (app, req) => {
  * @returns
  */
 const questionBankDetailById = async (app, req) => {
-  const { id, needQuestionList } = req.query;
+  const { id, need_question_list } = req.query;
   const questionBank = await app.models.QuestionBank.findOne({
     where: {
       id,
       adult_status: 2,
     },
-    include: needQuestionList
+    include: need_question_list
       ? [
           {
             where: {
